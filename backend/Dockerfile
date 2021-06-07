@@ -1,13 +1,16 @@
 FROM python:3.6
 
 ARG project_dir=/app/
+WORKDIR ${project_dir}
 
-ADD requirements.txt $project_dir
-ADD api.py $projectdir
+COPY requirements.txt $project_dir
+COPY api.py $project_dir
 
 WORKDIR ${project_dir}
 
 RUN pip install flask
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
+
+COPY . $project_dir
 
 CMD ["python","api.py"]

@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello():
   return "Hello World!"
 
-@app.route("/api", methods=['POST'])
+@app.route("/reply", methods=['POST'])
 def reply():
   data = json.loads(request.data)
   answer = "Yes,it is %s! \n" %data["keyword"]
