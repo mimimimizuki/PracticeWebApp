@@ -1,7 +1,13 @@
 import './App.css';
 import logo from "./logo.svg";
+import axios from 'axios';
 
 function App() {
+  axios.get("http://localhost:5000").then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.log(err)
+  })
   const companies = ["楽天株式会社", "LINE株式会社", "株式会社VOYAGE", "メルカリ"];
   const siteURLs = ["", "", "https://voyagegroup.snar.jp/", ""]
   const internURLs = ["","","","https://mercan.mercari.com/articles/28040/"]
@@ -13,8 +19,8 @@ function App() {
         <h1 className="card-title">{element}</h1>
       </div>
     <div className="card-link">
-    <a href="http://webcreatorbox.com/about">About</a>
-    <a href="http://webcreatorbox.com/">Website</a>
+    <a href={siteURLs[i]}>About</a>
+    <a href={internURLs[i]}>Website</a>
     </div>
   </div>
   </div>
