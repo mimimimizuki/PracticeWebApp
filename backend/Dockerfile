@@ -8,8 +8,9 @@ COPY requirements.txt $project_dir
 
 WORKDIR ${project_dir}
 
-RUN pip install flask
-RUN pip install PyMySQL
+RUN pip install -U flask
+RUN pip install -U flask_cors
+RUN pip install -U PyMySQL
 RUN pip install -U FLASK-SQLAlchemy
 RUN pip install -r requirements.txt --no-cache-dir
 
