@@ -53,10 +53,5 @@ def view_intern():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
   db.create_all()
   app.run(host="0.0.0.0",port = 5000, debug =True)
-=======
-  #db.create_all()
-  app.run(host="0.0.0.0",port = 5000, debug =True)
->>>>>>> 9949d7c5ed07c6896a34f965f5444c701a3d9e20
