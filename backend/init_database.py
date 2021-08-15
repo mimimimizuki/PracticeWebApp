@@ -2,8 +2,7 @@ from api import db
 from sqlalchemy.types import Integer
 from sqlalchemy.types import String
 from sqlalchemy.types import Text
-
-                                        
+                              
 
 class Company(db.Model):
   __tablename__ = "companies"

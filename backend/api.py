@@ -6,6 +6,7 @@ from init_database import Company
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
+
 CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///intern.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -13,6 +14,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 @app.route("/intern")
 def view_intern():
   companies = Company.quary.all()
+
   for company in companies:
     print(company.id,company.name,company.logo,company.courses,company.requirements,company.place,company.salary,company.term,company.deadline) 
     
